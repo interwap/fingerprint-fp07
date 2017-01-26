@@ -33,5 +33,6 @@ dependencies {
     //compile project(':enrolment-fp07')
     compile 'com.github.interwap:devtools-fp07:v2.0'
     compile 'com.github.interwap:enrolment-fp07:v1.0'
-    compile project(':fingerprint-fp07')
+    compile 'com.github.interwap:fingerprint-fp07:v1.0'
+
 }

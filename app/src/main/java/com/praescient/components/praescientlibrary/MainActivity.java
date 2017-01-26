@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements Fp07.MatchListene
                 popup.show(fragmentManager, "biometric_fragment");
 
 
-                    popup.match(template);
+                popup.match(template);
 
 
 

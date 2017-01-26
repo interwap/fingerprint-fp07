@@ -323,7 +323,6 @@ public class Fp07 extends DialogFragment {
                     activity.isMatch(true);
 
                 } else {
-                    SerialPortManager.getInstance().closeSerialPort();
                     status.setText("Match Failed!");
                     activity.isMatch(false);
                 }
