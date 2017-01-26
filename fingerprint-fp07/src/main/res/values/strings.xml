@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Fingerprint-FP07</string>
+    <string name="print">Please place your finger on the fingerprint reader</string>
+    <string name="auth">Match OK!</string>
+</resources>

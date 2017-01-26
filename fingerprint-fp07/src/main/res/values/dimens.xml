@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="print_placeholder">200dp</dimen>
+    <dimen name="title">10dp</dimen>
+    <dimen name="margin">100dp</dimen>
+    <dimen name="top_margin">50dp</dimen>
+
+</resources>
