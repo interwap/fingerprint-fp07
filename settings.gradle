@@ -1,0 +1,1 @@
+include ':app', ':fgtit-fp05', ':enrolment-fp05', ':fingerprint-fp05', ':camera-fp05', ':fgtit-fp07', ':enrolment-fp07', ':fingerprint-fp07', ':camera-fp07', ':bluetoothreaders', ':cardreader-fp07', ':devicemanager', ':bluetoothservice', ':bluetoothprinter', ':bluetoothreader'
