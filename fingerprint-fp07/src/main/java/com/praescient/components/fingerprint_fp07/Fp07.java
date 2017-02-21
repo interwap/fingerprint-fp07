@@ -284,53 +284,50 @@ public class Fp07 extends DialogFragment {
 
                 byte[] fingerprint = new byte[0];
                 MatchListener activity = (MatchListener) getActivity();
+                boolean match = false;
 
                 if(args.containsKey("template")){
                     fingerprint = Base64.decode( args.getString("template"), Base64.DEFAULT);
-                }
 
-                if(args.containsKey("templates")){
+                    if(FPMatch.getInstance().MatchTemplate(model, fingerprint)>60){
 
-                    boolean match = false;
-
-                    for (int i = 0; i < args.getStringArray("templates").length; i++ ){
-
-                        try {
-                            fingerprint = Base64.decode(args.getStringArray("templates")[i], Base64.DEFAULT);
-
-                            if(FPMatch.getInstance().MatchTemplate(model, fingerprint)>60){
-                                match = true;
-                            }
-
-                            bfpWork=false;
-                            TimerStart();
-
-                        } catch (Exception e){
-                            e.printStackTrace();
-                        }
-                    }
-
-                    if(match){
                         status.setText("Match Ok!");
                         SerialPortManager.getInstance().closeSerialPort();
                         activity.isMatch(true);
+
                     } else {
                         status.setText("Match Failed!");
                         activity.isMatch(false);
                     }
+
+                } else if(args.containsKey("templates")){
+
+                    String[] templates = args.getStringArray("templates");
+
+                    if(templates != null && templates.length > 0){
+
+                        for (String temp: templates){
+
+                            fingerprint = Base64.decode(temp, Base64.DEFAULT);
+
+                            if (FPMatch.getInstance().MatchTemplate(model, fingerprint)>60){
+                                match = true;
+                                break;
+                            }
+                        }
+
+                    }
+
+                    if(!match){
+                        status.setText("Match Failed!");
+                        activity.isMatch(false);
+
+                    } else {
+                        status.setText("Match Ok!");
+                        SerialPortManager.getInstance().closeSerialPort();
+                        activity.isMatch(true);
+                    }
                 }
-
-                if(FPMatch.getInstance().MatchTemplate(model, fingerprint)>60){
-
-                    status.setText("Match Ok!");
-                    SerialPortManager.getInstance().closeSerialPort();
-                    activity.isMatch(true);
-
-                } else {
-                    status.setText("Match Failed!");
-                    activity.isMatch(false);
-                }
-
 
                 bfpWork=false;
                 TimerStart();

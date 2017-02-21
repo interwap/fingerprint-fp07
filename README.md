@@ -21,16 +21,16 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 ```gradle
     dependencies {
-    	        compile 'com.github.interwap:fingerprint-fp07:v1.2'
+    	        compile 'com.github.interwap:fingerprint-fp07:v1.3'
     	}
  ```
 
-Get more information about versions and releases here: [`jitpack`](https://jitpack.io/#interwap/fingerprint-fp07/v1.2)
+Get more information about versions and releases here: [`jitpack`](https://jitpack.io/#interwap/fingerprint-fp07/v1.3)
 
+Update: Version 1.3 (Stable)
+- Modified Fingerprint Matching algorithm
 
-Update: Version 1.2 (Stable)
-- Edited Fingerprint Matching algorithm
-
+Update: Version 1.2 (Deprecated)
 
 Update: Version 1.1 (Stable)
 - Set value for text size
